@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "join_lib",
+    srcs = ["main.go"],
+    importpath = "chord/cmd/join",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "join",
+    embed = [":join_lib"],
+    visibility = ["//visibility:public"],
+)

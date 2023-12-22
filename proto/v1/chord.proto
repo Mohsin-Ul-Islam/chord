@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+message Node {
+    string port = 1;
+    string ipv4_addr = 2;
+}
+
+message LeftRequest {
+    Node peer = 1;
+}
+
+message LeftResponse {
+}
+
+message JoinedRequest {
+    Node peer = 1;
+}
+
+message JoinedResponse {
+}
+
+message JoinRequest {
+    Node peer = 1;
+}
+
+message JoinResponse {
+}
+
+message LeaveRequest {
+}
+
+message LeaveResponse {
+}
+
+service NodeService {
+    rpc Left(LeftRequest) returns (LeftResponse);
+    rpc Join(JoinRequest) returns (JoinResponse);
+    rpc Leave(LeaveRequest) returns (LeaveResponse);
+    rpc Joined(JoinedRequest) returns (JoinedResponse);
+}

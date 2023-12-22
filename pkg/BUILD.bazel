@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "pkg",
+    srcs = [
+        "hash.go",
+        "node.go",
+        "table.go",
+    ],
+    importpath = "chord/pkg",
+    visibility = ["//visibility:public"],
+)
